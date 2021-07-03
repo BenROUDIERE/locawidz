@@ -1,0 +1,11 @@
+{
+  "apps": [
+    {
+      "app_id": "app_ee7ce6e1-3df7-4193-9f2a-1d36cea8c6c4",
+      "org_id": "user_dcbe3d7d-718e-457e-93cc-4a1372f93745",
+      "deploy_url": "https://push-n2-par-clevercloud-customers.services.clever-cloud.com/app_ee7ce6e1-3df7-4193-9f2a-1d36cea8c6c4.git",
+      "name": "locawidz",
+      "alias": "locawidz"
+    }
+  ]
+}
