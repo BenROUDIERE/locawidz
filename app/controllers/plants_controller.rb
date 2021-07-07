@@ -10,4 +10,9 @@ class PlantsController < ApplicationController
 
   def create
   end
+
+  private
+  def plant_params
+    params.require(:plant).permit(:photo)
+  end
 end
