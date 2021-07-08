@@ -1,0 +1,41 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4));">
+  <div class="container">
+    <h1><%= @booking.name %></h1>
+  </div>
+</div>
+
+<div class="container my-5">
+  <div class="cards">
+    <% @booking.plants.each do |plant| %>
+
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.ravissant-jardin.com/wp-content/uploads/2018/04/physalis-chinese-lanterns.jpg)">
+        <%= plant.name %>
+        <%= link_to plant_path(plant), method: :delete, data: { confirm: "Are you sure?"}, class: "remove" do %>
+          <i class="fas fa-trash"></i>
+        <% end %>
+
+        <div class="card-tags">
+          <% plant.tags.each do |tag| %>
+            <span><%= tag.name %></span>
+          <% end %>
+          <%= link_to "+", new_plant_plant_tag_path(plant) %>
+        </div>
+
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="container">
+  <div class="col-4 offset-4">
+    <h4>Add a plant</h4>
+    <%= simple_form_for [@booking, @plant] do |f| %>
+      <%= f.input :name, placeholder: "Palm tree" %>
+      <%= f.input :image_url, placeholder: "https://some_nice_picture.com" %>
+      <%= f.submit "Add", class: "btn btn-primary my-2" %>
+    <% end %>
+  </div>
+</div>
+
+<%= link_to 'Edit', edit_booking_path(@booking) %> |
+<%= link_to 'Back', bookings_path %>
