@@ -11,6 +11,7 @@ class PlantsController < ApplicationController
         {
           lat: plant.latitude,
           lng: plant.longitude,
+          infoWindow: render_to_string(partial: "info_window", locals: { plant: plant })
         }
       end
     end
