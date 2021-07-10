@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)user.name = "Alex"
+require "open-uri"
+
 Booking.destroy_all
 Plant.destroy_all
 User.destroy_all
@@ -30,21 +32,24 @@ user = User.new(
 user.password = "123456789"
 user.save!
 
-Plant.create!(
+plant = Plant.new(
   address: "10 rue la noue croix de fer, 44000, NANTES",
-  name: "tulipe",
-  category: "fleur",
+  name: "Tulip",
+  category: "Flower",
   price_per_day: 2,
-  description: "belle plante colorée",
-  orientation: "nord",
-  sun: "ombre",
+  description: "Beautiful colored plant",
+  orientation: "North",
+  sun:"ombre",
   user: User.find_by(email:"maelle@mail.com")
 )
+file = URI.open("https://www.meillandrichardier.com/media/catalog/product/cache/1/image/800x800/040ec09b1e35df139433887a97daa66f/4/2/4225-tulipe_darwin_silver_stream-t1000.jpg")
+plant.photo.attach(io: file, filename: "tulipe.png", content_type: "image/png")
+plant.save!
 
 Booking.create!(
   start_date: DateTime.now,
   end_date: DateTime.tomorrow,
   total_price: 2,
   user: User.find_by(email:"ben@mail.com"),
-  plant: Plant.find_by(name:"tulipe")
+  plant: Plant.find_by(name:"Tulip")
 )
