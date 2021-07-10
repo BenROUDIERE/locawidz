@@ -1,7 +1,24 @@
 <h1>Plants#new</h1>
 <p>Find me in app/views/plants/new.html.erb</p>
 
-<% if policy(Plant).create? %>
-  <%= link_to "New Plant", new_plant_path %>
-<% end %>
-
+<div class="container-md">
+  <div class="row-new">
+    <div class="col-12 col-md-6 offset-lg-3">
+      <div class="bg-white rounded p-3 shadow">
+        <h3>Add a plant</h3>
+          <%= simple_form_for @plant do |f| %>
+            <%= f.input :name, placeholder: 'Name of your plant' %>
+            <%= f.input :address, placeholder: 'Enter your location' %>
+            <%= f.input :description, placeholder: 'Enter a description about the plant' %>
+            <%= f.input :category, placeholder: 'aromatic, fruit, comestible, decoration...' %>
+            <%= f.input :price_per_day, placeholder: 'renting price per day' %>
+            <%= f.input :orientation, placeholder: 'North, south etc...' %>
+            <%= f.input :sun, placeholder: 'ombre, peu ensoleillé, ensoleillé' %>
+            <%= f.input :photo, as: :file %>
+            <%= f.submit 'Add plant', class: 'btn btn-success' %>
+            <%= link_to 'Back home', root_path,class: 'btn btn-success'  %>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>
