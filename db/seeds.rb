@@ -46,6 +46,20 @@ file = URI.open("https://www.meillandrichardier.com/media/catalog/product/cache/
 plant.photo.attach(io: file, filename: "tulipe.png", content_type: "image/png")
 plant.save!
 
+plant = Plant.new(
+  address: "10 passage de la poule noire, 44000, NANTES",
+  name: "Cactus",
+  category: "Cactées",
+  price_per_day: 3,
+  description: "Plant",
+  orientation: "South",
+  sun:"ensoleille",
+  user: User.find_by(email:"ben@mail.com")
+)
+file = URI.open("https://media.istockphoto.com/photos/small-castus-in-a-pot-on-a-white-background-picture-id492056805")
+plant.photo.attach(io: file, filename: "cactus.png", content_type: "image/png")
+plant.save!
+
 Booking.create!(
   start_date: DateTime.now,
   end_date: DateTime.tomorrow,
