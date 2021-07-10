@@ -14,9 +14,9 @@
 
   <body>
     <div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top">
-      <a class="navbar-brand" href="#">
-        <img src="https://image.shutterstock.com/image-vector/cannabis-logo-design-template-600w-1223412355.jpg" />
-      </a>
+        <%= link_to root_path, class: "navbar-brand" do %>
+          <%= image_tag("weed") %>
+        <% end %>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -25,7 +25,7 @@
         <div class="row searchFilter" >
            <div class="search">
               <input type="text" class="searchTerm" placeholder="Kind of Flower ?">
-              <input type="text" class="searchTerm" placeholder="City ?">
+              <input type="text" class="searchTerm" id="plant_address" placeholder="City ?">
               <input type="text" class="searchTerm" placeholder="Start date ?">
               <input type="text" class="searchTerm" placeholder="End date ?">
               <button type="submit" class="searchButton">

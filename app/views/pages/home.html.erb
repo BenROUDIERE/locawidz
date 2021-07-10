@@ -13,8 +13,8 @@
   <div class="container" id="home_banner">
     <h1><span id="banner-typed-text"></span></h1>
     <p>The best way to rent <strong>flowers easely </strong>!</p>
-    <a class="btn btn-success" href="#">Find flowers</a>
-    <a class="btn btn-success" href="#">Post flowers</a>
+    <%= link_to 'Post plant', new_plant_path,class: 'btn btn-success'  %>
+    <%= link_to 'Find plant', plants_index_path,class: 'btn btn-success'  %>
   </div>
 </div>
 
