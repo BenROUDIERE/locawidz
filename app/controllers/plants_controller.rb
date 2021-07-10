@@ -7,6 +7,13 @@ class PlantsController < ApplicationController
       @plants = plant.where("name LIKE ?","%#{params[:query]}%")
     else
       @plants = Plant.all
+      @markers = @plants.geocoded.map do |plant|
+        {
+          lat: plant.latitude,
+          lng: plant.longitude,
+          infoWindow: render_to_string(partial: "info_window", locals: { plant: plant })
+        }
+      end
     end
   end
 
