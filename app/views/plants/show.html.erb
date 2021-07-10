@@ -1,13 +1,13 @@
 <div class="row card-product">
 
   <div class="col-6">
-    <%= cl_image_tag(@plant.photo.key,width: 500, height: 350, crop: :fill) %>
+    <%= cl_image_tag(@plant.photo.key,width: 700, height: 350, crop: :fill) %>
   </div>
 
   <div class="col-6">
     <div class="mx-2">
       <div class="d-flex justify-content-end">
-        Prix: <%= @plant.price_per_day%> Euros/Jour
+        <div class="btn-flat">Price/day: <%= @plant.price_per_day%> $</div>
       </div>
       <div>
         <div class="card-product-infos">
@@ -20,13 +20,12 @@
           <br>
           <br>
             Address: <%= @plant.address %>
-          <br>
-          <br>
-            Price/day: <%= @plant.price_per_day%> $
           </p>
         </div>
       </div>
-
+      <div class="d-flex justify-content-end">
+        <%= link_to "Book Plant", "#", class: "btn-flat-save" %>
+      </div>
     </div>
   </div>
 
