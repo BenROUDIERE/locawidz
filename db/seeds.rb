@@ -15,7 +15,6 @@ user = User.new(
   name: "Alex",
   email: "alex@mail.com"
 )
-
 user.password = "123456789"
 user.save!
 

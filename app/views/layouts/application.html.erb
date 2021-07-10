@@ -13,7 +13,7 @@
   </head>
 
   <body>
-    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top">
       <a class="navbar-brand" href="#">
         <img src="https://image.shutterstock.com/image-vector/cannabis-logo-design-template-600w-1223412355.jpg" />
       </a>
@@ -23,43 +23,11 @@
 
       <div class="container" id="search_navbar">
         <div class="row searchFilter" >
-           <div class="col-sm-12" >
-            <div class="input-group" >
-             <input id="table_filter" type="text" class="form-control" aria-label="Text input with segmented button dropdown" >
-             <div class="input-group-btn" >
-              <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ><span class="label-icon" >Category</span> <span class="caret" >&nbsp;</span></button>
-              <div class="dropdown-menu dropdown-menu-right" >
-                 <ul class="category_filters" >
-                  <li >
-                   <input class="cat_type category-input" data-label="All" id="all" value="" name="radios" type="radio" ><label for="all" >All</label>
-                  </li>
-                  <li >
-                   <input type="radio" name="radios" id="Design" value="Design" ><label class="category-label" for="Design" >Aromtics</label>
-                  </li>
-                  <li >
-                   <input type="radio" name="radios" id="Marketing" value="Marketing" ><label class="category-label" for="Marketing" >Fruits</label>
-                  </li>
-                  <li >
-                   <input type="radio" name="radios" id="Programming" value="Programming" ><label class="category-label" for="Programming" >Comestible</label>
-                  </li>
-                  <li >
-                   <input type="radio" name="radios" id="Sales" value="Sales" ><label class="category-label" for="Sales" >Decoration</label>
-                  </li>
-                  <li >
-                   <input type="radio" name="radios" id="Support" value="Support" ><label class="category-label" for="Support" >Easy</label>
-                  </li>
-                 </ul>
-              </div>
-              <button id="searchBtn" type="button" class="btn btn-secondary btn-search" ><span class="glyphicon glyphicon-search" >&nbsp;</span> <span class="label-icon" >Search</span></button>
-             </div>
-            </div>
-           </div>
-        </div>
-
-
-        <div class="wrap">
            <div class="search">
-              <input type="text" class="searchTerm" placeholder="What are you looking for?">
+              <input type="text" class="searchTerm" placeholder="Kind of Flower ?">
+              <input type="text" class="searchTerm" placeholder="City ?">
+              <input type="text" class="searchTerm" placeholder="Start date ?">
+              <input type="text" class="searchTerm" placeholder="End date ?">
               <button type="submit" class="searchButton">
                 <i class="fa fa-search"></i>
              </button>
@@ -73,13 +41,16 @@
             <a class="nav-link" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Messages</a>
+            <a class="nav-link" href="#">Bookings</a>
           </li>
           <li class="nav-item dropdown">
             <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Post a plant</a>
+              <a class="dropdown-item" href="#">Owner Booking index</a>
+              <a class="dropdown-item" href="#">Owner Plants index</a>
+              <a class="dropdown-item" href="#">Renter Booking index</a>
+              <a class="dropdown-item" href="#">Connexion</a>
             </div>
           </li>
         </ul>
@@ -92,17 +63,14 @@
   <footer>
     <div class="footer">
         <div class="footer-links">
-          <a href="#"><i class="fab fa-github"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-facebook"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.instagram.com/balcon_fleuri/"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/WEED-404093609648112"><i class="fab fa-facebook"></i></a>
         </div>
         <div class="footer-text">
           <p>🪴 Locawidz 🪴</p>
         </div>
         <div class="footer-copyright">
-          This footer is made with <i class="fas fa-heart"></i> at Le Wagon
+          Only for plants <i class="fas fa-heart"></i> !
         </div>
     </div>
   </footer>
