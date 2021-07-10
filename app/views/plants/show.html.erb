@@ -1,3 +1,34 @@
-<h1>Plants#show</h1>
-<p>Find me in app/views/plants/show.html.erb</p>
-<%= @plant.name %>
+<div class="row card-product">
+
+  <div class="col-6">
+    <%= cl_image_tag(@plant.photo.key,width: 500, height: 350, crop: :fill) %>
+  </div>
+
+  <div class="col-6">
+    <div class="mx-2">
+      <div class="d-flex justify-content-end">
+        Prix: <%= @plant.price_per_day%> Euros/Jour
+      </div>
+      <div>
+        <div class="card-product-infos">
+          <h2><%= @plant.name %></h2>
+
+          <p><%= @plant.description %>
+          <br>
+          <br>
+            Orientation: <%= @plant.orientation %>
+          <br>
+          <br>
+            Address: <%= @plant.address %>
+          <br>
+          <br>
+            Price/day: <%= @plant.price_per_day%> $
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
