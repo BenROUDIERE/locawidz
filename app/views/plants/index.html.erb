@@ -17,7 +17,9 @@
   <% @plants.each do |plant| %>
     <div class="col-4">
       <div class="plant-card">
-        <div class="plant-card-image" style="background-image: url()"></div>
+        <div class="plant-card-image">
+          <%= cl_image_tag(plant.photo.key) %>
+        </div>
         <div class="plant-card-content">
           <div class="plant-card-title">
             <h4><%= plant.name %></h4>

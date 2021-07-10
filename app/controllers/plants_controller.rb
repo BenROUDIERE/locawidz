@@ -1,5 +1,6 @@
 class PlantsController < ApplicationController
-  before_action :set_plant, only: [:show, :edit, :update, :destroy]
+  before_action :set_plant, only: [:show]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     if params[:query].present?
@@ -22,9 +23,11 @@ class PlantsController < ApplicationController
   end
 
   def create
+    @user = current_user
     @plant = Plant.new(plant_params)
+    @plant.user = @user
     if @plant.save
-      redirect_to plants_path
+      redirect_to root_path
     else
       render :new
     end
@@ -34,18 +37,6 @@ class PlantsController < ApplicationController
     @plant = Plant.find(params[:id])
   end
 
-  def edit
-  end
-
-  def update
-    @plant.update(plant_params)
-    redirect_to plant_path(@plant)
-  end
-
-  def destroy
-    @plant.destroy
-    redirect_to plants_path
-  end
 
   private
 
@@ -55,10 +46,5 @@ class PlantsController < ApplicationController
 
   def plant_params
     params.require(:plant).permit(:name, :address, :category, :sun, :description, :price_per_day, :orientation, :photo)
-  end
-
-  private
-  def plant_params
-    params.require(:plant).permit(:photo)
   end
 end
