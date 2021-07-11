@@ -5,8 +5,8 @@ const loadDynamicBannerText = () => {
 
   if (banner) {
     new Typed('#banner-typed-text', {
-      strings: ["🪴 Locawidz 🪴"],
-      typeSpeed: 70,
+      strings: ["Locawidz"],
+      typeSpeed: 80,
       loop: false
     });
   }
