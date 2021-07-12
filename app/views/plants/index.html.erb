@@ -1,42 +1,43 @@
 <h1>Plants#index</h1>
 <p>Find me in app/views/plants/index.html.erb</p>
+<%= form_tag plants_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a plant"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
 
-<div class="container mt-3">
-  <div class="row">
-    <div class="col-12">
-      <h1>Available plants</h1>
-      <div id="map"
-        style="width: 100%; height: 350px;"
-        data-markers="<%= @markers.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-      </div>
-    </div>
-  </div>
-  
-<div class="row">
-  <% @plants.each do |plant| %>
-    <div class="col-4">
-      <div class="plant-card">
-        <div class="plant-card-image">
-          <%= cl_image_tag(plant.photo.key) %>
-        </div>
-        <div class="plant-card-content">
-          <div class="plant-card-title">
-            <h4><%= plant.name %></h4>
+<h1 id="index-title">Available plants</h1>
+
+<div class="cards-container">
+  <div class="cards">
+    <% @plants.each do |plant| %>
+      <div class="card">
+          <div class="plant-card-image">
+            <%= cl_image_tag(plant.photo.key) %>
           </div>
-          <p><%= plant.address %></p>
-          <div class="flex">
-            
-            <div class="flex ml-3">
-              <i class="material-icons mr-2">Price per day: <%= plant.price_per_day %>€</i> 
+          <div class="plant-card-content">
+            <div class="plant-card-title">
+              <h4><%= plant.name %></h4>
+            </div>
+            <p><%= plant.address %></p>
+            <div class="flex">
+              <i class="material-icons mr-2"><%= plant.price_per_day %>€/day</i> 
             </div>
           </div>
-        </div>
-        <div class="plant-card-actions">
-          <%= link_to 'More info', plant_path(plant) %>
-        </div>
+          <div class="plant-card-actions">
+            <%= link_to 'More info', plant_path(plant) %>
+          </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
+
+  <div id="map"
+    style="width: 100%; height: 600px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+
 </div>
-<%= link_to 'Return', root_path, class: 'btn-flat-save mr-1'  %>

@@ -8,6 +8,8 @@
 }
 
 #map {
-  max-width: 600px;
-  max-height: 800px;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  margin-left: 20px;
 }
