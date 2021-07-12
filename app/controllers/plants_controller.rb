@@ -4,8 +4,14 @@ class PlantsController < ApplicationController
 
   def index
     if params[:query].present?
-      @query = params[:query]
-      @plants = plant.where("name LIKE ?","%#{params[:query]}%")
+      sql_query = " \
+        plants.name @@ :query \
+        OR plants.category @@ :query \
+        OR plants.address @@ :query \
+        OR bookings.start_date @@ :query \
+        OR bookings.end_date @@ :query \
+      "
+      @plants = Plant.joins(:bookings).where(sql_query, query: "%#{params[:query]}%")
     else
       @plants = Plant.all
       @markers = @plants.geocoded.map do |plant|
