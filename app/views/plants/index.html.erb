@@ -28,7 +28,7 @@
           <div class="flex">
             
             <div class="flex ml-3">
-              <i class="material-icons mr-2">Price per day: <%= plant.price_per_day %>€</i> 
+              <i class="material-icons mr-2"><%= plant.price_per_day %>€/Day</i>
             </div>
           </div>
         </div>
@@ -39,4 +39,4 @@
     </div>
   <% end %>
 </div>
-<%= link_to 'Return', root_path, class: 'btn-flat-save mr-1'  %>
+<%= link_to 'Home', root_path, class: 'btn-flat-save mr-1'  %>
