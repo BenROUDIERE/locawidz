@@ -4,11 +4,11 @@
 
 <div class="row card-product" id="plant_card">
 
-  <div class="col-4">
+  <div class="col-6">
     <%= cl_image_tag(@plant.photo.key,width: 700, height: 350, crop: :fill) %>
   </div>
 
-  <div class="col-8">
+  <div class="col-6">
     <div class="mx-2">
       <div class="d-flex justify-content-end">
         <div class="btn-flat"><%= @plant.price_per_day%> $/Day</div>
