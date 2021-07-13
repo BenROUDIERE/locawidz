@@ -33,7 +33,7 @@ user.password = "123456789"
 user.save!
 
 plant = Plant.new(
-  address: "10 rue la noue croix de fer, 44000, NANTES",
+  address: "10 rue La Nouë Bras de Fer, 44100 Nantes",
   name: "Tulip",
   category: "Flower",
   price_per_day: 2,

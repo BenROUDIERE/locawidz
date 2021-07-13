@@ -4,14 +4,15 @@
 
 <div class="row card-product" id="plant_card">
 
-  <div class="col-6">
+  <div class="col-4">
     <%= cl_image_tag(@plant.photo.key,width: 700, height: 350, crop: :fill) %>
+    <%= link_to 'Return', plants_index_path, class: "btn btn-light"  %>
   </div>
 
   <div class="col-6">
     <div class="mx-2">
       <div class="d-flex justify-content-end">
-        <div class="btn-flat"><%= @plant.price_per_day%> $/Day</div>
+        <div class="btn-flat"><%= @plant.price_per_day%>€/day</div>
       </div>
       <div>
         <div class="card-product-infos">
@@ -28,7 +29,6 @@
         </div>
       </div>
       <div class="d-flex justify-content-end">
-        <%= link_to 'Home', plants_index_path, class: 'btn-flat-save mr-1'  %>
         <%= link_to "Book Plant", "#", class: "btn-flat-save" %>
       </div>
     </div>

@@ -15,9 +15,9 @@
   box-shadow: 0 2px 20px rgba(126,87,88,0.2),0 3px 10px rgba(0,0,0,0.6);
 }
 
-.cards {
+#home-cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 16px;
   padding: 16px;
 }
