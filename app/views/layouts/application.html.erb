@@ -15,12 +15,11 @@
   <body>
     <div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top">
         <%= link_to root_path, class: "navbar-brand" do %>
-          <%= image_tag("weed.png") %>
+          <%= image_tag("green-weed.png") %>
         <% end %>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-
       <div class="search">
         <%= form_tag plants_path, method: :get do %>
           <%= text_field_tag :query,
@@ -41,7 +40,7 @@
             <a class="nav-link" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Bookings</a>
+            <a class="nav-link" href="#">My Profile</a>
           </li>
           <li class="nav-item dropdown">
             <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
@@ -78,7 +77,7 @@
           <a href="https://www.facebook.com/WEED-404093609648112"><i class="fab fa-facebook"></i></a>
         </div>
         <div class="footer-text">
-          <p>🪴 Locawidz 🪴</p>
+          <p>Locawidz</p>
         </div>
         <div class="footer-copyright">
           Only for plants <i class="fas fa-heart"></i> !
