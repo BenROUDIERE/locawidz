@@ -6,4 +6,5 @@ class User < ApplicationRecord
   has_many :bookings
   has_many :plants
   has_many :rented_plants, through: :bookings, source: :plant
+  has_one_attached :photo
 end
