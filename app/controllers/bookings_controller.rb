@@ -11,6 +11,7 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+    @plant = Plant.find(params[:plant_id])
   end
 
   def edit
@@ -18,9 +19,12 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
+    @plant = Plant.find(params[:plant_id])
+    @booking.plant = @plant
+    @booking.user = current_user
 
     if @booking.save
-      redirect_to @booking, notice: "booking was successfully created."
+      redirect_to plants_index_path, notice: "booking was successfully created."
     else
       render :new, status: :unprocessable_entity
     end
@@ -47,6 +51,8 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:name)
+    params.require(:booking).permit(:start_date, :end_date)
   end
 end
+
+    
