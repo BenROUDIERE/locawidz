@@ -8,4 +8,3 @@ const initAutocomplete = () => {
 };
 
 export { initAutocomplete };
-
