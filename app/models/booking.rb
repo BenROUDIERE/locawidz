@@ -5,15 +5,15 @@ class Booking < ApplicationRecord
   validates :start_date, :end_date, presence: true
 
   def set_price
-    self.days = (end_date - start_date).to_i
-    self.price = days * plant.price
+    self.total_days = (end_date.to_date - start_date.to_date).to_i
+    self.total_price = total_days * plant.price_per_day
   end
 
   def accept
-    self.accepted = "accepted"
+    self.status = "accepted"
   end
 
   def refuse
-    self.accepted = "refused"
+    self.status = "refused"
   end
 end

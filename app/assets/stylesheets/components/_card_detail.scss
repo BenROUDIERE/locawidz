@@ -19,6 +19,7 @@
 
 .plant-card-image {
   width: 100%;
+  box-sizing: border-box;
   img {
       width: auto;
       height: auto;
@@ -27,6 +28,13 @@
       object-fit: cover;
   }
 }
+
+#plant_card {
+  margin-top: 20px;
+  min-height: 650px;
+  max-height: 100%;
+}
+
 @media (max-width:  1000px) {
   .cards{
     grid-template-columns:  1fr 1fr;
@@ -51,6 +59,12 @@
   
   .plant-card-image {
     height: 180px;
+    background-position: center;
+    background-size: cover;
+  }
+
+  #plant-card-image {
+    object-fit: contain;
     background-position: center;
     background-size: cover;
   }
