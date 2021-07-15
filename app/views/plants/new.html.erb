@@ -7,10 +7,10 @@
         <h3>Add a plant</h3>
           <%= simple_form_for @plant do |f| %>
             <%= f.input :name, placeholder: 'Name of your plant' %>
-            <%= f.input :address, id:'plant_address', placeholder: 'Enter your location' %>
+            <%= f.input :address, id:'plant-localisation', placeholder: 'Enter your location' %>
             <%= f.input :description, placeholder: 'Enter a description about the plant' %>
             <%= f.input :category, prompt: 'Choose a category', collection: ['Aromatic', 'Small Fruits', 'Comestible flowoer', 'Decoration', 'Healthy', 'Easy-maintenance'] %>
-            <%= f.input :price_per_day, placeholder: 'renting price per day' %>
+            <%= f.input :price_per_day, placeholder: '€/day' %>
             <%= f.input :orientation, as: :radio_buttons, wrapper_html: {class: 'inline'}, collection: ['North', 'East', 'South', 'West'] %>
             <%= f.input :sun, as: :radio_buttons, class:'form-check-inline', collection: ['Shadow 🌥', 'Sunny 🌞', 'Whatever 🌤'] %>
             <%= f.input :photo, as: :file %>
@@ -20,3 +20,7 @@
     </div>
   </div>
 </div>
+<br>
+<br>
+<br>
+<br>
