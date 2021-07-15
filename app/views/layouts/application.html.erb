@@ -36,10 +36,16 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home</a>
+            <a><%= link_to root_path do %>
+              <%= content_tag :span, "Home", class:"nav-link" %>
+              <% end %>
+            </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">My Profile</a>
+            <a><%= link_to owner_bookings_path do %>
+              <%= content_tag :span, "My reservations", class:"nav-link" %>
+              <% end %>
+            </a>
           </li>
           <li class="nav-item dropdown">
             <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
@@ -47,14 +53,11 @@
               <%= link_to new_plant_path do %>
                 <%= content_tag :span, "Post a plant", :class => "dropdown-item" %>
               <% end %>
-              <%= link_to plants_path do %>
-                <%= content_tag :span, "Owner Booking index", :class => "dropdown-item" %>
+              <%= link_to owner_bookings_path do %>
+                <%= content_tag :span, "All my reservations", :class => "dropdown-item" %>
               <% end %>
               <%= link_to plants_path do %>
-                <%= content_tag :span, "Owner Plants index", :class => "dropdown-item" %>
-              <% end %>
-              <%= link_to plants_path do %>
-                <%= content_tag :span, "Renter Booking index", :class => "dropdown-item" %>
+                <%= content_tag :span, "My plants to rent", :class => "dropdown-item" %>
               <% end %>
               <%= link_to new_user_session_path do %>
                 <%= content_tag :span, "Connexion", :class => "dropdown-item" %>
