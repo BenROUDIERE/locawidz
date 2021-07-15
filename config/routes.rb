@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'plants/new'
   get 'plants/create'
 
+
   resources :plants, only: [:index, :new, :create, :show] do
     resources :bookings, only: [:new, :create, :index]
     end
