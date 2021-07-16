@@ -1,3 +1,24 @@
+#small-container {
+  max-width: 5px;
+}
+
 .custom-container {
   min-height: calc(100vh - 80px);
+}
+
+.main-container {
+  display: grid;
+  justify-content: center;
+}
+
+.cards-container {
+  display: flex;
+}
+
+.container-booked-plants {
+  margin-right: 45px;
+}
+
+.container-my-bookings {
+  margin-left: 45px;
 }

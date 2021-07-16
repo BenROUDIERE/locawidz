@@ -1,0 +1,19 @@
+<br>
+<br>
+<br>
+<div class="container-md">
+  <div class="row-new">
+    <div class="col-12 col-md-6 offset-lg-3">
+      <div class="bg-white rounded p-3 shadow">
+        <h3>New User</h3>
+          <%= simple_form_for @user do |f| %>
+            <%= f.input :name, placeholder: 'Your full name' %>
+            <%= f.input :email, placeholder: 'user@mail.com' %>
+            <%= f.input :encrypted_password, placeholder: '9 letters min' %>
+            <%= f.input :photo, as: :file %>
+            <%= f.submit 'Create profile', class: 'btn btn-success' %>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>

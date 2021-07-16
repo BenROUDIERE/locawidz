@@ -10,10 +10,10 @@ class Booking < ApplicationRecord
   end
 
   def accept
-    self.status = "accepted"
+    self.status = "Accepted"
   end
 
   def refuse
-    self.status = "refused"
+    self.status = "Refused"
   end
 end
