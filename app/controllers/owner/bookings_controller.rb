@@ -1,5 +1,6 @@
 class Owner::BookingsController < ApplicationController
-  
+  before_action :set_booking, only: [:accept, :refuse]
+
   def index
     @bookings = current_user.bookings.order(created_at: :desc)
     @booked = Booking.joins(:plant).where(plants: {user: current_user}).order(created_at: :desc)

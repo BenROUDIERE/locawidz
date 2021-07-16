@@ -1,61 +1,69 @@
+<br>
+<br>
+<br>
+<br>
 <div class="section-title">
-<h1>Mes réservations</h1>
+<h1>My reservations</h1>
 </div>
 
 <div class="container-my-bookings">
-<div class="cards-container d-flex">
-  <p><%= "Vous n'avez pas encore effectué de réservations" if @bookings.empty? %></p>
-  <% @bookings.each do |booking| %>
-  <div class="card-booking">
-  <div class="card-booking-img">
-
+  <div class="cards-container d-flex">
+    <p><%= "You don't have a reservation" if @booked.empty? %></p>
+      <% @booked.each do |booking| %>
+      <div class="card" id="card-reservation" style="width: 18rem;">
+        <div class="card-img-top plant-card-image">
+          <%= cl_image_tag(booking.plant.photo.key, width: 300, height: 300,crop: :fill) %>
+        </div>
+      <div class="card-body">
+        <div class="card-text">
+          <h2><%= booking.plant.name %></h2>
+          <p>You have made a reservation for a <strong><%= booking.plant.name %></strong> in <strong><%= booking.plant.category %></strong></p>
+          <p><%= booking.plant.description %></p>
+        </div>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <div class="btn-flat">Total: <strong><%= booking.total_price%>€</strong></div>
+        </li>
+        <li class="list-group-item">
+          <p>From: <strong><%= booking.start_date.to_date %></strong></p>
+          <p>To: <strong><%= booking.end_date.to_date %></strong></p> 
+        </li>
+        <li class="list-group-item">Take your plant at : 
+          <p><%= booking.plant.address %></p>
+        </li>
+      </ul>
+      </div>
+    <% end %>
   </div>
-    <div class="card-title-booking">
-      <h5><strong><%= link_to booking.plant.name, plant_path(booking.plant), class: "show-from-dashboard"%></strong></h5>
-    </div>
-      <div class="card-text-booking">
-        <p> Vous avez effectué une réservation pour <%= booking.plant.name %>, plus précisemment un <%= booking.plant.category %></p>
-      </div>
-      <div class="card-details-booking">
-
-        <p>Du: <%= booking.start_date %> Au: <%= booking.end_date %></p>
-       
-
-      
-      </div>
-    </div>
-      <% end %>
 </div>
-</div>
-
-
+<br>
+<br>
+<br>
 <div class="section-title">
-<h1>Mes plantes réservées</h1>
+<h1>My reserved plants</h1>
 </div>
 
 <div class="container-booked-plants">
-<div class="cards-container d-flex">
-  <p><%= "Vous n'avez pas encore de plantes louées" if @booked.empty? %></p>
-  <% @booked.each do |booking| %>
-    <div class="card-booking">
-      <div class="card-booking-img">
-      </div>
-    <div class="card-title-booking">
-      <h5><strong><%= booking.plant.name %></strong></h5>
-    </div>
-      <div class="card-text-booking">
-        <p>Une demande de réservation a été effectuée pour votre <%= booking.plant.name %>, le <%= booking.plant.category %></p>
-      </div>
-      <div class="card-details-booking">
-
-
+  <div class="cards-container d-flex">
+      <p><%= "No plant request fort the moment" if @bookings.empty? %></p>
+      <% @bookings.each do |booking| %>
+        <div class="card text-center" id="card-reservation" >
+          <div class="card-header">
+            <h5><strong><%= booking.plant.name %></strong></h5>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Your <strong><%= booking.plant.name %></strong> has just been reserved !</h5>
+            <p class="card-text">For a total of :<%= booking.total_price %>€</p>
+            <li class="list-group-item"></li>
+              <p>From: <strong><%= booking.start_date.to_date %></strong></p>
+              <p>To: <strong><%= booking.end_date.to_date %></strong></p> 
+            </li>
+            <p> <%= booking.status %></p>
+            <%= link_to 'Accept', owner_bookings_path(booking), method: :patch %>
+            <%= link_to 'Decline', "#" %>
+          </div>
         </div>
-      </div>
-      <p> <%= booking.status %></p>
-      <%= link_to 'Accept', owner_accept_booking_path(booking), method: :patch %>
-      <%= link_to 'Decline', "#" %>
-    </div>
-  <% end %>
+      <%end%>
+  </div>
 </div>
-</div>
-
