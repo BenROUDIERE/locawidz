@@ -12,5 +12,5 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create, :index]
     end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  patch 'owner/bookings/:id', to: 'owner/bookings#accept_booking', as: 'owner_accept_booking'
+
 end
