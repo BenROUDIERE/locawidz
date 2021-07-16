@@ -22,7 +22,6 @@ class BookingsController < ApplicationController
     @plant = Plant.find(params[:plant_id])
     @booking.plant = @plant
     @booking.user = current_user
-    @booking.status = "pending"
 
     if @booking.save
       redirect_to plants_index_path, notice: "booking was successfully created."
