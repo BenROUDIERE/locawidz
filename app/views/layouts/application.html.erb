@@ -43,7 +43,7 @@
           </li>
           <li class="nav-item">
             <a><%= link_to owner_bookings_path do %>
-              <%= content_tag :span, "My reservations", class:"nav-link" %>
+              <%= content_tag :span, "My profile", class:"nav-link" %>
               <% end %>
             </a>
           </li>
@@ -62,15 +62,16 @@
               <%= link_to new_user_session_path do %>
                 <%= content_tag :span, "Connexion", :class => "dropdown-item" %>
               <% end %>
+              <%= link_to new_user_registration_path do %>
+                <%= content_tag :span, "Create Profile", :class => "dropdown-item" %>
+              <% end %>
             </div>
           </li>
         </ul>
       </div>
 
     </div>
-    <div class="custom-container">
     <%= yield %>
-    </div>
   </body>
 
   <footer>

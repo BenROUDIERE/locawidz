@@ -12,7 +12,14 @@ class Owner::BookingsController < ApplicationController
     @booking.save
     redirect_to owner_bookings_path
   end
-  
+
+  def refuse_booking
+    @booking = Booking.find(params[:id])
+    @booking.refuse
+    @booking.save
+    redirect_to owner_bookings_path
+  end
+
   def new
     @plant = Plant.find(params[:plant_id])
     @booking = Booking.new(plant_id:@plant.id)
@@ -23,19 +30,9 @@ class Owner::BookingsController < ApplicationController
     @plant = Plant.find(params[:plant_id])
     @booking.user = current_user
     @booking.plant = @plant
-    @booking.accepted = "pending"
+    @booking.accepted = "Pending"
     @booking.save ? (redirect_to bookings_path(@plant)) : (render :new)
     flash[:notice] = "You have successfully booked a plant"
-  end
-
-  def status
-    @booking.accept
-    save_booking
-  end
-
-  def refuse
-    @booking.refuse
-    save_booking
   end
 
   private

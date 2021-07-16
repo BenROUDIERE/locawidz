@@ -5,8 +5,29 @@
   padding: 16px;
 }
 
-#card-reservation {
-  margin-right: 10px;
+#plant_card {
+  margin-top: 20px;
+  min-height: 650px;
+  max-height: 100%;
+}
+
+#plant-card-image {
+  object-fit: contain;
+  background-position: center;
+  background-size: cover;
+}
+
+#cards-reservation {
+  margin-right: 8px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
+
+#owner-cards-reservation {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 35rem;
 }
 
 .card-category {
@@ -60,6 +81,74 @@
   padding: 16px;
 }
 
+.card {
+  background-size: cover;
+  border-radius: 1px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+}
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+  max-height: 55px;
+}
+
+.plant-card-image {
+  width: 100%;
+  box-sizing: border-box;
+  img {
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: cover;
+  }
+}
+
+.plant-card {
+  width: 100%;
+  position: relative;
+  margin: .5rem 0 1rem 0;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+}
+
+.plant-card-image {
+  height: 180px;
+  background-position: center;
+  background-size: cover;
+}
+
+.plant-card-content {
+  padding: 24px;
+  background-color: #F8F9FA;
+}
+
+.plant-card-actions {
+  position: relative;
+  background-color: inherit;
+  border-top: 1px solid rgba(160,160,160,0.2);
+  padding: 12px 16px;
+}
+
+.plant-form {
+  background-color: #F8F9FA;
+  padding: 24px;
+  border-radius: 3px;
+}
+
+.plant-show-card {
+  background: #F8F9FA;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  border-radius: 3px;
+}
+
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
@@ -91,6 +180,6 @@
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
   .cards {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
