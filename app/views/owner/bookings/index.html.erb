@@ -59,11 +59,11 @@
               <p>From: <strong><%= booking.start_date.to_date %></strong></p>
               <p>To: <strong><%= booking.end_date.to_date %></strong></p> 
             </li>
-            <a href="#" class="card-link">Accept</a>
-            <a href="#" class="card-link">Refuse</a>
+            <p> <%= booking.status %></p>
+              <%= link_to 'Accept', owner_accept_booking_path(booking), method: :patch %>
+              <%= link_to 'Decline', "#" %>
           </div>
         </div>
       <%end%>
   </div>
 </div>
-
