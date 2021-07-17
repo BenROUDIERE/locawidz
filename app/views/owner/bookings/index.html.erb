@@ -13,8 +13,7 @@
       <div class="cards" id="cards-reservation">
         <% @booked.each do |booking| %>
         <div class="card" id="card-reservation" style="width: 18rem;">
-          <div class="card-img-top plant-card-image">
-            <%= cl_image_tag(booking.plant.photo.key, width: 300, height: 300,crop: :fill) %>
+          <div class="plant-card-image" id="image-user-plant" style="background-image: url('<%= cl_image_path(booking.plant.photo.key) %>')">
           </div>
         <div class="card-body">
           <div class="card-text">

@@ -4,7 +4,15 @@
   grid-gap: 16px;
   padding: 16px;
 }
-
+#home-cards :hover{
+  opacity: 5;
+  box-shadow: 0 2px 20px rgba(126,87,88,0.2),0 3px 10px rgba(0,0,0,0.6);
+  text-decoration: none;
+}
+#image-user-plant{
+  background-size: cover;
+  object-fit: cover;
+}
 #plant_card {
   margin-top: 20px;
   min-height: 650px;
@@ -49,6 +57,11 @@
   border-radius: 20px;
   padding: 8px;
   box-shadow: 0 2px 20px rgba(126,87,88,0.2),0 3px 10px rgba(0,0,0,0.6);
+}
+
+.card-category:hover {
+  opacity: 2;
+  text-decoration: none;
 }
 
 .card-product {
