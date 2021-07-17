@@ -6,9 +6,9 @@
 <div class="cards-container">
   <div class="cards">
     <% @plants.each do |plant| %>
-      <div class="card" id="plant-card-index">
-          <div class="plant-card-image">
-            <%= cl_image_tag(plant.photo.key) %>
+      <div class="card">
+          <div class="plant-card-image" style="background-image: url('<%= cl_image_path(plant.photo.key)%>')">
+            <%#= cl_image_path(plant.photo.key) %>
           </div>
           <div class="plant-card-content">
             <div class="plant-card-title">
