@@ -40,6 +40,7 @@ class PlantsController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
     @plant = Plant.find(params[:id])
   end
 
