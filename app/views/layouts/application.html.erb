@@ -42,7 +42,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a><%= link_to owner_bookings_path do %>
+            <a><%= link_to user_path(current_user) do %>
               <%= content_tag :span, "My profile", class:"nav-link" %>
               <% end %>
             </a>
@@ -55,9 +55,6 @@
               <% end %>
               <%= link_to owner_bookings_path do %>
                 <%= content_tag :span, "All my reservations", :class => "dropdown-item" %>
-              <% end %>
-              <%= link_to plants_path do %>
-                <%= content_tag :span, "My plants to rent", :class => "dropdown-item" %>
               <% end %>
               <%= link_to new_user_session_path do %>
                 <%= content_tag :span, "Connexion", :class => "dropdown-item" %>
