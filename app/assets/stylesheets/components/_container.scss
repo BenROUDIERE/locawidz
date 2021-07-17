@@ -2,11 +2,12 @@
   max-width: 5px;
 }
 
-.custom-container {
-  min-height: calc(100vh - 80px);
+#custom-container {
+  min-height: calc(100% - 80px);
 }
 
 .main-container {
+  min-height: calc(100% - 80px);
   display: grid;
   justify-content: center;
 }
@@ -21,4 +22,9 @@
 
 .container-my-bookings {
   margin-left: 45px;
+}
+
+body {
+  // min-height: calc(100% - 80px);
+  position: relative;
 }
