@@ -70,7 +70,7 @@ plant = Plant.new(
   sun:"Sunny",
   user: User.find_by(email:"alex@mail.com")
 )
-file = URI.open("https://agricfarming.com/wp-content/uploads/2018/11/tayberries.jpg")
+file = URI.open("https://www.jacques-briant.fr/4508-large_default/medana-tayberry.jpg")
 plant.photo.attach(io: file, filename: "tayberry.png", content_type: "image/png")
 plant.save!
 
